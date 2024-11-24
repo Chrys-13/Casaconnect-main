@@ -1,0 +1,110 @@
+/* General Styles for Consultation */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Page Title */
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    color: #007BFF;
+}
+
+/* Booking Table */
+#available-slots {
+    text-align: center;
+    margin: 2rem auto;
+    width: 80%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#available-slots table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#available-slots th, #available-slots td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+#available-slots th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #555;
+}
+
+#available-slots td button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#available-slots td button:hover {
+    background-color: #218838;
+}
+
+/* Empty Table Message */
+#available-slots tbody tr td {
+    color: #999;
+    font-style: italic;
+}
+
+/* Hover Effect for Rows */
+#available-slots tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #available-slots {
+        width: 95%;
+    }
+
+    #available-slots th, #available-slots td {
+        font-size: 0.9rem;
+    }
+}

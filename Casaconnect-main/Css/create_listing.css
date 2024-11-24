@@ -1,0 +1,108 @@
+/* Styles for create_listing.html */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #333;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.create-listing-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 1rem;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 1rem;
+}
+
+.form-container label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="file"],
+.form-container textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container .btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-container .create-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.form-container .create-btn:hover {
+    background-color: #0056b3;
+}
+
+.form-container .cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.form-container .cancel-btn:hover {
+    background-color: #999;
+}

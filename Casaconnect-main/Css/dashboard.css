@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#dashboard {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#analytics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.analytics-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 45%;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-button {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: #007bff;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+canvas {
+    max-width: 100%;
+}

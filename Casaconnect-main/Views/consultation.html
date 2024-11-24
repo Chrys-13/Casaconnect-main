@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Booking</title>
+    <link rel="stylesheet" href="../Css/consultation.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CasaConnect</div>
+            <ul class="nav-links">
+                <li><a href="services.html">Back to Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Book a Consultation</h1>
+        <div id="available-slots">
+            <h2>Available Slots</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Slots will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // Fetch available slots from the backend
+        $(document).ready(function () {
+            $.getJSON("../actions/get_slots.php?type=consultation", function (data) {
+                let slotsTable = $("#available-slots tbody");
+                slotsTable.empty(); // Clear previous rows
+
+                if (data.length > 0) {
+                    data.forEach(slot => {
+                        slotsTable.append(`
+                            <tr>
+                                <td>${slot.date}</td>
+                                <td>${slot.time}</td>
+                                <td>
+                                    <button onclick="bookSlot(${slot.id})">Book</button>
+                                </td>
+                            </tr>
+                        `);
+                    });
+                } else {
+                    slotsTable.append("<tr><td colspan='3'>No slots available</td></tr>");
+                }
+            });
+        });
+
+        // Book a slot
+        function bookSlot(slotId) {
+            const userId = 1; // Replace with session user ID if logged in
+
+            $.post("../actions/book_slot.php", { slot_id: slotId, user_id: userId }, function (response) {
+                alert(response);
+                location.reload(); // Refresh the page to show updated slots
+            });
+        }
+    </script>
+</body>
+</html>
