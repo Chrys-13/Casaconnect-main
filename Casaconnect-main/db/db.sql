@@ -60,3 +60,22 @@ CREATE TABLE `booked_property_valuations` (
     FOREIGN KEY (`username`) REFERENCES `users`(`username`) ON DELETE CASCADE
 );
 
+- Create the properties table
+CREATE TABLE properties (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    property_name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    thumbnail VARCHAR(255) NOT NULL,
+    images TEXT NOT NULL, -- Comma-separated image URLs
+    description TEXT
+);
+
+-- Creating the logs table 
+CREATE TABLE logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_id INT NOT NULL,
+    action TEXT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (admin_id) REFERENCES admins(id) ON DELETE CASCADE
+);

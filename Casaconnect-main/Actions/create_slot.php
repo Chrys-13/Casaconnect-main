@@ -18,6 +18,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         echo "Slot created successfully!";
+
+        // Log the action
+        $log_action = "Created a $type slot on $date at $time";
+        $admin_id = 1; // Replace with dynamic admin ID from session or authentication system
+        $log_stmt = $conn->prepare("INSERT INTO logs (admin_id, action, timestamp) VALUES (?, ?, NOW())");
+        $log_stmt->bind_param("is", $admin_id, $log_action);
+
+        if ($log_stmt->execute()) {
+            echo " Log entry created successfully.";
+        } else {
+            echo " Error logging the action: " . $log_stmt->error;
+        }
+
+        $log_stmt->close();
     } else {
         echo "Error: " . $stmt->error;
     }
